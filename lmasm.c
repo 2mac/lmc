@@ -42,12 +42,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 #define UNUSED(X) (void)(X)
 
 #define MAX_LABEL_LEN 32
 #define MAX_OPCODE_LEN 3
 #define MAX_NUM_DIGITS 5
+
+#if !(_ISOC99_SOURCE || _POSIX_C_SOURCE >= 200112L)
+int
+isblank(int c)
+{
+	return ' ' == c || '\n' == c;
+}
+#endif
 
 enum lmasm_arg_format
 {
