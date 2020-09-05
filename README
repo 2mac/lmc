@@ -1,0 +1,11 @@
+lmc
+===
+
+My implementation of the [Little Man Computer][1]. My friend inspired me to
+write an implementation of this for academic purposes, and I had a joy writing
+it.
+
+I finished the first implementation in 2 days (really one day had I started
+early in the morning). I intend to make a few improvements over time.
+
+[1]: https://en.wikipedia.org/wiki/Little_man_computer
