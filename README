@@ -8,4 +8,21 @@ it.
 I finished the first implementation in 2 days (really one day had I started
 early in the morning). I intend to make a few improvements over time.
 
+Usage
+-----
+
+`lmc` can execute code assembled with `lmasm`. I've included a test program
+with this software. You can assemble it like so:
+
+    $ lmasm square.lma square.lexe
+
+This will create the binary program `square.lexe` which `lmc` understands.
+
+    $ lmc square.lexe
+
+This test program will square any number you input. Input `0` to quit. Note
+that the LMC can only handle numbers up to 999, so any number higher than 31
+will overflow and give an incorrect result, but this is a limitation of the
+system.
+
 [1]: https://en.wikipedia.org/wiki/Little_man_computer
