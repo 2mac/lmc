@@ -54,7 +54,7 @@
 int
 isblank(int c)
 {
-	return ' ' == c || '\n' == c;
+	return ' ' == c || '\t' == c;
 }
 #endif
 
@@ -406,6 +406,8 @@ main(int argc, char *argv[])
 			rc = finish_line(input_file, false, cur_line);
 			if (rc)
 				goto end;
+
+			continue;
 		}
 
 		if (!isblank(c)) /* start of a label */
@@ -511,6 +513,8 @@ main(int argc, char *argv[])
 			rc = finish_line(input_file, false, cur_line);
 			if (rc)
 				goto end;
+
+			continue;
 		}
 
 		/* skip label */
