@@ -213,7 +213,16 @@ main(int argc, char *argv[])
 	i = 0;
 	while ((c = fgetc(input_file)) != EOF)
 	{
-		int *mailbox = &lmc.mailboxes[i / NUM_DIGITS];
+		int *mailbox;
+
+		if (c > 9) /* not a digit */
+		{
+			fprintf(stderr, "Digit %d at position %d is too big\n",
+				c, i);
+			return 1;
+		}
+
+		mailbox = &lmc.mailboxes[i / NUM_DIGITS];
 		*mailbox *= 10;
 		*mailbox += c;
 
