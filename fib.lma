@@ -1,5 +1,6 @@
         LDA A           // print first two numbers in the sequence
         OUT
+        LDA B
         OUT
         LDA C           // load 3rd number
 
@@ -14,6 +15,6 @@ LOOP    OUT             // write current number in sequence
 
         HLT             // the end!
 
-A       DAT 1           // the 1st number in the sequence
+A       DAT 0           // the 1st number in the sequence
 B       DAT 1           // the 2nd
-C       DAT 2           // 1 + 1
+C       DAT 1           // 0 + 1
