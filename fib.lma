@@ -1,19 +1,19 @@
-        LDA A
+        LDA A           // print first two numbers in the sequence
         OUT
         OUT
+        LDA C           // load 3rd number
 
-        LDA C
-LOOP    OUT
-        LDA B
+LOOP    OUT             // write current number in sequence
+        LDA B           // move B to A
         STA A
-        LDA C
+        LDA C           // move C to B
         STA B
-        ADD A
-        STA C
-        BRP LOOP
+        ADD A           // add A to B (still in accumulator)
+        STA C           // put sum in C
+        BRP LOOP        // if we didn't overflow, loop
 
-        HLT
+        HLT             // the end!
 
-A       DAT 1
-B       DAT 1
-C       DAT 2
+A       DAT 1           // the 1st number in the sequence
+B       DAT 1           // the 2nd
+C       DAT 2           // 1 + 1
