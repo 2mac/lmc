@@ -156,7 +156,7 @@ lmc_io(struct lmc *lmc)
 	{
 	case 1:
 		rc = 0;
-		while (rc != 1)
+		while (rc != 1 || lmc->cpu.a < 0 || lmc->cpu.a > MAX_VALUE)
 		{
 			printf("Input number (0-%d): ", MAX_VALUE);
 			rc = scanf("%d", &lmc->cpu.a);
