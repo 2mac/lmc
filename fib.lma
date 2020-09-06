@@ -1,0 +1,19 @@
+        LDA A
+        OUT
+        OUT
+
+        LDA C
+LOOP    OUT
+        LDA B
+        STA A
+        LDA C
+        STA B
+        ADD A
+        STA C
+        BRP LOOP
+
+        HLT
+
+A       DAT 1
+B       DAT 1
+C       DAT 2
