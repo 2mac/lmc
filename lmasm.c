@@ -566,6 +566,7 @@ main(int argc, char *argv[])
 			goto end;
 		}
 
+		ungetc(c, input_file);
 		c = next_non_blank(input_file);
 		if (c != EOF)
 			ungetc(c, input_file);
