@@ -1,0 +1,19 @@
+LOOP    LDA COUNT1
+        SUB ONE
+        STA COUNT1
+        BRP LOOP
+        LDA COUNT2
+        SUB ONE
+        STA COUNT2
+        BRP LOOP
+        LDA COUNT3
+        SUB ONE
+        STA COUNT3
+        BRP LOOP
+
+        HLT
+
+COUNT1  DAT 999
+COUNT2  DAT 999
+COUNT3  DAT 999
+ONE     DAT 1
