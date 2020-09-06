@@ -102,7 +102,8 @@ lmc_add(struct lmc *lmc)
 {
 	lmc->cpu.a += lmc->mailboxes[lmc->cpu.addr];
 	lmc->cpu.neg = lmc->cpu.a > MAX_VALUE;
-	lmc->cpu.a %= MAX_VALUE + 1;
+	if (lmc->cpu.neg)
+		lmc->cpu.a -= MAX_VALUE + 1;
 }
 
 static void
@@ -110,7 +111,8 @@ lmc_sub(struct lmc *lmc)
 {
 	lmc->cpu.a -= lmc->mailboxes[lmc->cpu.addr];
 	lmc->cpu.neg = lmc->cpu.a < 0;
-	lmc->cpu.a %= MAX_VALUE + 1;
+	if (lmc->cpu.neg)
+		lmc->cpu.a += MAX_VALUE + 1;
 }
 
 static void
